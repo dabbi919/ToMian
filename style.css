@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: main-font;
+  src: url(The-Grinch.woff);
+}
+
+body {
+  background: linear-gradient(to right, #acc7da, #a69bd1);
+}
+
+.card {
+  width: 800px;
+  height: 480px;
+  perspective: 1000px;
+  margin: auto;
+  margin-top: 180px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.front {
+  display: flex;
+  background-image: url(./img/christmas-tree.png);
+  background-size: cover;
+}
+
+.front, .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front img {
+  width: 330px;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.front .text-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 30px 40px;
+}
+
+.front h2 {
+  color: #ffffff;
+  font-size: 28px;
+}
+
+.front p {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.front button {
+  width: 120px;
+  border: 1px solid #fff;
+  background: transparent;
+  border-radius: 50px;
+  padding: 12px;
+  cursor: pointer;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.back {
+  background: url(img/background.png);
+  background-size: cover;
+  color: #333;
+  padding: 100px 40px;
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.back div p {
+  font-family: 'bitter';
+  font-size: 27px;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.back div span {
+  font-family: main-font;
+  font-size: 47px;
+}
+
+.back div .from {
+  font-family: 'bitter';
+  font-size: 20px;
+  margin-top: 40px;
+  margin-left: 460px;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
